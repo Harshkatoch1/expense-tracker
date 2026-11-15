@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis · Kharcha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner"><div class="brand">Kharcha<small>daily expense tracker</small></div><nav class="tabs" aria-label="Main"><a href="/index.html">Add expense</a><a href="/transactions.html">Transactions</a><a href="/analysis.html" aria-current="page">Analysis</a></nav></div></header>
+<main>
+  <h1 class="page-title">Where your money goes</h1>
+  <p class="page-sub" id="range-label">Loading…</p>
+
+  <div class="toolbar" role="group" aria-label="Date range">
+    <button class="btn" data-range="7" aria-pressed="false">Last 7 days</button>
+    <button class="btn" data-range="30" aria-pressed="true">Last 30 days</button>
+    <button class="btn" data-range="month" aria-pressed="false">This month</button>
+    <button class="btn" data-range="all" aria-pressed="false">All time</button>
+  </div>
+
+  <div id="content">
+    <div class="kpis">
+      <div class="kpi"><div class="label">Total spent</div><div class="value" id="k-total">–</div><div class="hint" id="k-count"></div></div>
+      <div class="kpi"><div class="label">Daily average</div><div class="value" id="k-avg">–</div><div class="hint" id="k-days"></div></div>
+      <div class="kpi"><div class="label">Top category</div><div class="value" id="k-cat">–</div><div class="hint" id="k-cat-hint"></div></div>
+      <div class="kpi"><div class="label">Biggest expense</div><div class="value" id="k-max">–</div><div class="hint" id="k-max-hint"></div></div>
+    </div>
+
+    <div class="chart-grid">
+      <section class="panel chart-panel wide"><h3>Spending per day</h3><div class="chart-box tall"><canvas id="c-daily"></canvas></div></section>
+      <section class="panel chart-panel"><h3>By category</h3><div class="chart-box"><canvas id="c-cat"></canvas></div></section>
+      <section class="panel chart-panel"><h3>By payment method</h3><div class="chart-box"><canvas id="c-pay"></canvas></div></section>
+      <section class="panel chart-panel"><h3>By day of week</h3><div class="chart-box"><canvas id="c-week"></canvas></div></section>
+      <section class="panel chart-panel">
+        <h3>Five biggest expenses</h3>
+        <table class="top"><thead><tr><th>What</th><th>Date</th><th class="num">Amount</th></tr></thead><tbody id="top-body"></tbody></table>
+      </section>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/analysis.js"></script>
+</body>
+</html>

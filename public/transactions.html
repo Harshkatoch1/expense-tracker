@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transactions · Kharcha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner"><div class="brand">Kharcha<small>daily expense tracker</small></div><nav class="tabs" aria-label="Main"><a href="/index.html">Add expense</a><a href="/transactions.html" aria-current="page">Transactions</a><a href="/analysis.html">Analysis</a></nav></div></header>
+<main>
+  <h1 class="page-title" id="heading">Transactions</h1>
+  <p class="page-sub" id="subheading"></p>
+
+  <div id="banner"></div>
+
+  <div class="toolbar">
+    <button class="btn" id="prev" aria-label="Previous day">‹ Prev</button>
+    <input class="input" type="date" id="date-picker" aria-label="Pick a day">
+    <button class="btn" id="next" aria-label="Next day">Next ›</button>
+    <button class="btn" id="today">Today</button>
+    <span class="spacer"></span>
+    <button class="btn" id="toggle-all" aria-pressed="false">Show all days</button>
+  </div>
+
+  <div id="list" aria-live="polite"></div>
+</main>
+<script src="/js/common.js"></script>
+<script src="/js/transactions.js"></script>
+</body>
+</html>
