@@ -16,6 +16,7 @@ Node.js + Express + MongoDB (Mongoose) with a plain HTML/CSS/JS front end.
    npm start
    ```
 3. Open http://localhost:3000
+4. open https://beverage-favour-buf-jimmy.trycloudflare.com
 
 Edit `.env` to point `MONGODB_URI` at Atlas or another MongoDB server. The database and `expenses` collection are created automatically on the first save.
 
